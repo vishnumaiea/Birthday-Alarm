@@ -1,4 +1,4 @@
-# Arduino-Birthday-Alarm
+# Arduino-Powered-Birthday-Alarm-That'll-Run-for-37-Years!
 An Arduino powered birthday reminder device that'll wish you happy birthday for 37 years on a single CR2450 coin cell.
 
 Full documentation of this project is avilable at
