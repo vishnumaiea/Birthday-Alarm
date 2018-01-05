@@ -53,8 +53,8 @@ volatile bool isTimeUpdateInterrupt = false;
 //runs once at the startup
 
 void setup(void) {
-  for (byte i = 0; i <= A7; i++) { //set all pins as outputs and LOW (least current consumption)
-    pinMode (i, INPUT);
+  for (byte i = 0; i <= A7; i++) { //set all pins as outputs/inputs and LOW (least current consumption)
+    pinMode (i, INPUT); //INPUT and OUTPUT has the same effect
     digitalWrite (i, LOW);
   }
 
