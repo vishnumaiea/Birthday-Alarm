@@ -3,5 +3,6 @@ An Arduino powered birthday reminder device that'll wish you happy birthday for 
 
 Full documentation of this project is avilable at
 
-1. https://www.hackster.io/vishnumaiea/birthday-alarm-that-ll-run-for-37-years-cd9fc0
-2. https://hackaday.io/project/29327-birthday-alarm-thatll-run-for-37-years
+1. https://hackaday.io/project/29327
+2. https://www.hackster.io/vishnumaiea/cd9fc0
+
