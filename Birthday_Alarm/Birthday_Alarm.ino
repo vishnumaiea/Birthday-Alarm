@@ -243,7 +243,7 @@ void fetchTime() {
             incomingString.remove(0,1); //remove 'T'
             incomingString.remove(14); //remove delimiter
 
-            yearValue = byte((incomingString.substring(0, 2)).toInt());
+            yearValue = byte((incomingString.substring(0, 2)).toInt()); //convert string values to decimals
             monthValue = byte((incomingString.substring(2, 4)).toInt());
             dateValue = byte((incomingString.substring(4, 6)).toInt());
             hourValue = byte((incomingString.substring(6, 8)).toInt());
@@ -269,9 +269,9 @@ void fetchTime() {
             Serial.println(yearValue);
 
             //write to time register
-            Wire.beginTransmission(0x6F);
+            Wire.beginTransmission(0x6F); //send the I2C address of RTC
             Wire.write(SC); //starting address of time register
-            Wire.write(decToBcd(secondValue));
+            Wire.write(decToBcd(secondValue)); //convert the dec value to BCD ans send
             Wire.write(decToBcd(minuteValue));
 
             hourValue = decToBcd(hourValue); //convert to BCD
@@ -295,7 +295,7 @@ void fetchTime() {
             incomingString.remove(0,1); //remove 'A'
             incomingString.remove(12); //remove delimiter #
 
-            monthValue = byte((incomingString.substring(0, 2)).toInt());
+            monthValue = byte((incomingString.substring(0, 2)).toInt()); //convert string values to decimals
             dateValue = byte((incomingString.substring(2, 4)).toInt());
             hourValue = byte((incomingString.substring(4, 6)).toInt());
             minuteValue = byte((incomingString.substring(6, 8)).toInt());
@@ -413,7 +413,7 @@ byte decToBcd(byte val) {
 //type "t" to the console to get the current time
 
 void printTime() {
-  Wire.beginTransmission(0x6F);
+  Wire.beginTransmission(0x6F); //send I2C address of RTC
   Wire.write(SC); //seconds register
   Wire.endTransmission();
 
