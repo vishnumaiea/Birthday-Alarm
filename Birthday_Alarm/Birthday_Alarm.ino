@@ -67,11 +67,13 @@ void setup(void) {
   digitalWrite(LED_PIN, HIGH);  //turn pin 13 LED on
 
   Wire.begin(); //begin I2C
+  delay(100);
 
   Wire.beginTransmission(0x6F);
   Wire.write(0x07); //status register
   Wire.write(0x90); //SR register (ARST = 1, WRTC = 1)
-  Wire.write(0xE0); //INT register (IM = 1, ALME = 1, LPMOD = 1)
+//  Wire.write(0xE0); //INT register (IM = 1, ALME = 1, LPMOD = 1)
+  Wire.write(0xC9); //INT register (IM = 1, ALME = 1, LPMOD = 0)
   Wire.endTransmission();
 
   //the following is to reset the power failure bit RTCF
